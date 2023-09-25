@@ -30,8 +30,8 @@ public class Cliente {
     private String cpf;
     @Column(nullable = false)
     private int telefone;
-    @OneToOne
-    @JoinColumn(name = "parecerTecnico_id", nullable = true)
+
+    @OneToMany(mappedBy = "cliente")
     @JsonBackReference
-    private ParecerTecnico parecerTecnico;
+    private List<ParecerTecnico> parecerTecnicos;
 }
